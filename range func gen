@@ -1,8 +1,9 @@
 def my_range(start, stop, step=1):
-    print(start)
+    rangelist = [start]
     while (start + step) < stop:
         start += step
-        print(start)
+        rangelist.append(start)
+    return rangelist
 
 
-my_range(int(input()), int(input()), int(input()))
+print(my_range(int(input()), int(input()), int(input())))
