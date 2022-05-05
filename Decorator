@@ -1,0 +1,16 @@
+from typing import Union
+from functools import wraps
+
+def decorator(func):
+    def wrapper(*args, **kwargs):
+        print(f'Calling {func.__name__}')
+        print(f'Got arguments {args}')
+        print(f'Got keyword arguments {kwargs}')
+    return wrapper
+
+
+def add(a: Union[int, float], b: Union[int, float]) -> Union[int, float]:
+    return a + b
+
+add = decorator(add)
+add(1, 2.0)
